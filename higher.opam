@@ -1,0 +1,19 @@
+opam-version: "2.0"
+maintainer: "yallop@gmail.com"
+authors: ["Jeremy Yallop" "Leo White"]
+homepage: "https://github.com/ocamllabs/higher"
+bug-reports: "https://github.com/ocamllabs/higher/issues"
+dev-repo: "https://github.com/ocamllabs/higher.git"
+license: "MIT"
+build: [
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
+]
+
+build-test: ["dune" "runtest" "-p" name]
+depends: [
+  "ocamlbuild" {build}
+  "ocamlfind" {build}
+  "topkg" {build}
+]
+tags: ["org:ocamllabs"]

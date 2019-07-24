@@ -8,3 +8,7 @@
 ._bcdi
 ._d
 ._ncdi
+
+_build/
+.merlin
+higher.install
