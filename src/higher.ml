@@ -5,70 +5,70 @@ type ('p, 'f) app
 
 module type Newtype0 = sig
   type s
-  type t
-  external inj : s -> t 
+  type ty
+  external inj : s -> ty 
     = "%identity"
-  external prj : t -> s
+  external prj : ty -> s
     = "%identity"
 end
 
 module type Newtype1 = sig
   type 'a s
-  type t
-  external inj : 'a s -> ('a, t) app 
+  type ty
+  external inj : 'a s -> ('a, ty) app 
     = "%identity"
-  external prj : ('a, t) app -> 'a s
+  external prj : ('a, ty) app -> 'a s
     = "%identity"
 end
 
 module type Newtype2 = sig
   type ('a, 'b) s
-  type t
-  external inj : ('a, 'b) s -> ('a, ('b, t) app) app 
+  type ty
+  external inj : ('a, 'b) s -> ('a, ('b, ty) app) app 
     = "%identity"
-  external prj : ('a, ('b, t) app) app -> ('a, 'b) s
+  external prj : ('a, ('b, ty) app) app -> ('a, 'b) s
     = "%identity"
 end
 
 module type Newtype3 = sig
   type ('a, 'b, 'c) s
-  type t
-  external inj : ('a, 'b, 'c) s -> ('a, ('b, ('c, t) app) app) app 
+  type ty
+  external inj : ('a, 'b, 'c) s -> ('a, ('b, ('c, ty) app) app) app 
     = "%identity"
-  external prj : ('a, ('b, ('c, t) app) app) app -> ('a, 'b, 'c) s
+  external prj : ('a, ('b, ('c, ty) app) app) app -> ('a, 'b, 'c) s
     = "%identity"
 end
 
 module type Newtype4 = sig
   type ('a, 'b, 'c, 'd) s
-  type t
-  external inj : ('a, 'b, 'c, 'd) s -> ('a, ('b, ('c, ('d, t) app) app) app) app 
+  type ty
+  external inj : ('a, 'b, 'c, 'd) s -> ('a, ('b, ('c, ('d, ty) app) app) app) app 
     = "%identity"
-  external prj : ('a, ('b, ('c, ('d, t) app) app) app) app -> ('a, 'b, 'c, 'd) s
+  external prj : ('a, ('b, ('c, ('d, ty) app) app) app) app -> ('a, 'b, 'c, 'd) s
     = "%identity"
 end
 
 module type Newtype5 = sig
   type ('a, 'b, 'c, 'd, 'e) s
-  type t
-  external inj : ('a, 'b, 'c, 'd, 'e) s -> ('a, ('b, ('c, ('d, ('e, t) app) app) app) app) app 
+  type ty
+  external inj : ('a, 'b, 'c, 'd, 'e) s -> ('a, ('b, ('c, ('d, ('e, ty) app) app) app) app) app 
     = "%identity"
-  external prj : ('a, ('b, ('c, ('d, ('e, t) app) app) app) app) app -> ('a, 'b, 'c, 'd, 'e) s
+  external prj : ('a, ('b, ('c, ('d, ('e, ty) app) app) app) app) app -> ('a, 'b, 'c, 'd, 'e) s
     = "%identity"
 end
 
 module type Newtype6 = sig
   type ('a, 'b, 'c, 'd, 'e, 'f) s
-  type t
-  external inj : ('a, 'b, 'c, 'd, 'e, 'f) s -> ('a, ('b, ('c, ('d, ('e, ('f, t) app) app) app) app) app) app 
+  type ty
+  external inj : ('a, 'b, 'c, 'd, 'e, 'f) s -> ('a, ('b, ('c, ('d, ('e, ('f, ty) app) app) app) app) app) app 
     = "%identity"
-  external prj : ('a, ('b, ('c, ('d, ('e, ('f, t) app) app) app) app) app) app -> ('a, 'b, 'c, 'd, 'e, 'f) s
+  external prj : ('a, ('b, ('c, ('d, ('e, ('f, ty) app) app) app) app) app) app -> ('a, 'b, 'c, 'd, 'e, 'f) s
     = "%identity"
 end
 
 module Common =
 struct
-  type t
+  type ty
   external inj : 'a -> 'b = "%identity"
   external prj : 'a -> 'b = "%identity"
 end
