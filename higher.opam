@@ -3,8 +3,10 @@ maintainer: "yallop@gmail.com"
 authors: ["Jeremy Yallop" "Leo White"]
 homepage: "https://github.com/ocamllabs/higher"
 bug-reports: "https://github.com/ocamllabs/higher/issues"
-dev-repo: "https://github.com/ocamllabs/higher.git"
+dev-repo: "git://github.com/rmdouglas/higher.git"
 license: "MIT"
+version: "3.1.0-dev"
+description: "Higher-kinded programming in OCaml, as described in 'Lightweight Higher-Kinded Polymorphism'"
 build: [
   ["dune" "subst"] {pinned}
   ["dune" "build" "-p" name "-j" jobs]
